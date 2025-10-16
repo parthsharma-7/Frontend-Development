@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 9 - File Upload Form</title>
+</head>
+<body>
+    <!-- Question 9: Create a File Upload Form where users can upload only .jpg or .png files.
+         Use the accept attribute to restrict file types.
+         Include a short note in a <p> tag describing what kind of files are allowed. -->
+    
+    <h1>File Upload Form</h1>
+    
+    <form action="#" method="post" enctype="multipart/form-data">
+        <!-- File upload input with accept attribute -->
+        <label for="fileUpload">Choose image file:</label><br>
+        <input type="file" id="fileUpload" name="fileUpload" accept=".jpg,.jpeg,.png" required><br><br>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Upload File">
+    </form>
+    
+    <!-- Information about allowed file types -->
+    <p><strong>Note:</strong> Only JPEG (.jpg, .jpeg) and PNG (.png) image files are allowed. Please select an appropriate image file to upload.</p>
+    
+    <p>The accept attribute restricts the file picker to show only the specified file types.</p>
+</body>
+</html>

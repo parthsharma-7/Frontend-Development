@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 10 - Contact Form</title>
+</head>
+<body>
+    <!-- Question 10: Create a Contact Form with the following:
+         Full Name, Email, Subject, Message (textarea)
+         Use the placeholder and required attributes properly. -->
+    
+    <h1>Contact Form</h1>
+    
+    <form action="#" method="post">
+        <!-- Full Name field -->
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+        
+        <!-- Email field -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" placeholder="example@domain.com" required><br><br>
+        
+        <!-- Subject field -->
+        <label for="subject">Subject:</label><br>
+        <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required><br><br>
+        
+        <!-- Message textarea -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="6" cols="50" placeholder="Please enter your detailed message here..." required></textarea><br><br>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Send Message">
+    </form>
+    
+    <p>All fields are required. Please fill out the complete form to send your message.</p>
+</body>
+</html>

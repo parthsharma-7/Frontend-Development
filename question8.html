@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 8 - Feedback Form</title>
+</head>
+<body>
+    <!-- Question 8: Design a Feedback Form that includes:
+         A textarea for feedback, Radio buttons for rating (Good, Average, Poor), A submit button
+         Use method="post" and action="#". -->
+    
+    <h1>Feedback Form</h1>
+    
+    <form action="#" method="post">
+        <!-- Feedback textarea -->
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="6" cols="50" placeholder="Please share your feedback here..."></textarea><br><br>
+        
+        <!-- Rating radio buttons -->
+        <label>Rate our service:</label><br>
+        
+        <input type="radio" id="good" name="rating" value="good">
+        <label for="good">Good</label><br>
+        
+        <input type="radio" id="average" name="rating" value="average">
+        <label for="average">Average</label><br>
+        
+        <input type="radio" id="poor" name="rating" value="poor">
+        <label for="poor">Poor</label><br><br>
+        
+        <!-- Submit button -->
+        <input type="submit" value="Submit Feedback">
+    </form>
+    
+    <p>Please provide your honest feedback and rate our service.</p>
+</body>
+</html>
