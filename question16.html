@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 16 - URI Encoding</title>
+</head>
+<body>
+    <!-- Question 16: Create a webpage that demonstrates URI encoding.
+         Add a hyperlink that includes special characters in its URL, for example:
+         https://example.com/search?query=HTML & CSS
+         Write the correct encoded version of this link using %20 for spaces. -->
+    
+    <h1>URI Encoding Demonstration</h1>
+    
+    <h2>Example with Special Characters</h2>
+    
+    <!-- Original URL with special characters (this would be problematic) -->
+    <p><strong>Original URL with special characters:</strong><br>
+    https://example.com/search?query=HTML & CSS</p>
+    
+    <!-- Properly encoded URL -->
+    <p><strong>Properly encoded URL:</strong><br>
+    <a href="https://example.com/search?query=HTML%20%26%20CSS" target="_blank">
+        https://example.com/search?query=HTML%20%26%20CSS
+    </a></p>
+    
+    <!-- Additional examples -->
+    <h2>More URI Encoding Examples</h2>
+    
+    <p><strong>URL with spaces and special characters:</strong></p>
+    <ul>
+        <li>Original: https://example.com/search?query=web development & design</li>
+        <li>Encoded: <a href="https://example.com/search?query=web%20development%20%26%20design" target="_blank">
+            https://example.com/search?query=web%20development%20%26%20design</a></li>
+    </ul>
+    
+    <!-- Explanation table -->
+    <h2>Common URI Encoding Reference</h2>
+    <table border="1">
+        <tr>
+            <th>Character</th>
+            <th>Encoded</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>Space</td>
+            <td>%20</td>
+            <td>Space character</td>
+        </tr>
+        <tr>
+            <td>&amp;</td>
+            <td>%26</td>
+            <td>Ampersand</td>
+        </tr>
+        <tr>
+            <td>?</td>
+            <td>%3F</td>
+            <td>Question mark</td>
+        </tr>
+        <tr>
+            <td>#</td>
+            <td>%23</td>
+            <td>Hash/pound sign</td>
+        </tr>
+        <tr>
+            <td>%</td>
+            <td>%25</td>
+            <td>Percent sign</td>
+        </tr>
+    </table>
+    
+    <p><strong>Note:</strong> URI encoding (percent encoding) is essential for ensuring URLs work correctly when they contain special characters. The %20 specifically represents a space character in URI encoding.</p>
+</body>
+</html>
