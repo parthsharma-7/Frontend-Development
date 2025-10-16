@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 15 - Payment Form</title>
+</head>
+<body>
+    <!-- Question 15: Create a Payment Form with fields for:
+         Cardholder Name, Card Number, Expiry Date, CVV
+         Add the required attribute to all fields and include a "Pay Now" button. -->
+    
+    <h1>Payment Form</h1>
+    
+    <form action="#" method="post">
+        <!-- Cardholder Name field -->
+        <label for="cardholderName">Cardholder Name:</label><br>
+        <input type="text" id="cardholderName" name="cardholderName" placeholder="Full name as on card" required><br><br>
+        
+        <!-- Card Number field -->
+        <label for="cardNumber">Card Number:</label><br>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required><br><br>
+        
+        <!-- Expiry Date field -->
+        <label for="expiryDate">Expiry Date:</label><br>
+        <input type="month" id="expiryDate" name="expiryDate" required><br><br>
+        
+        <!-- CVV field -->
+        <label for="cvv">CVV:</label><br>
+        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4" required><br><br>
+        
+        <!-- Pay Now button -->
+        <input type="submit" value="Pay Now">
+    </form>
+    
+    <p><strong>Security Notice:</strong> All fields are required. Your payment information is encrypted and secure.</p>
+    <p><em>This is a demo form - do not enter real payment information.</em></p>
+</body>
+</html>
