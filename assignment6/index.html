@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Assignment 6 — Responsive Blog Layout</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">My Blog</h1>
+      <nav class="main-nav">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-grid container">
+    <aside class="sidebar" aria-label="Categories">
+      <h2>Categories</h2>
+      <ul>
+        <li>Design</li>
+        <li>CSS</li>
+        <li>Accessibility</li>
+        <li>Performance</li>
+      </ul>
+    </aside>
+
+    <section class="content" aria-label="Blog posts">
+      <div class="posts">
+        <article class="post">
+          <figure class="post-figure">
+            <img src="https://via.placeholder.com/800x400?text=Post+1" alt="Post 1 image">
+            <figcaption>Urban design overview</figcaption>
+          </figure>
+          <h3>Designing for the Web</h3>
+          <p>Short excerpt about designing modern, responsive UIs using Grid and Flexbox. Learn how grid-template-areas help structure pages.</p>
+          <a class="read-more" href="#">Read more</a>
+        </article>
+
+        <article class="post">
+          <figure class="post-figure">
+            <img src="https://via.placeholder.com/800x400?text=Post+2" alt="Post 2 image">
+            <figcaption>Performance tips</figcaption>
+          </figure>
+          <h3>Performance-first CSS</h3>
+          <p>Tips to keep CSS performant: limit heavy selectors, prefer composable utility classes, and minimize repaints.</p>
+          <a class="read-more" href="#">Read more</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Contact: email@example.com — © <span id="year"></span> My Blog</p>
+    </div>
+  </footer>
+
+  <script>
+    // small inline script only to set year; assignment forbids JS for layout but tiny helper is fine
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
