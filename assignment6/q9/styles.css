@@ -1,7 +1,0 @@
-*{box-sizing:border-box}
-body{margin:0;height:100vh;display:flex;align-items:center;justify-content:center;background:#f4f6fb;font-family:Arial}
-.stage{perspective:1000px}
-.card{width:260px;height:180px;position:relative;transform-style:preserve-3d;transition:transform .6s}
-.card:hover{transform:rotateY(180deg)}
-.side{position:absolute;inset:0;backface-visibility:hidden;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:1rem}
-.back{transform:rotateY(180deg)}
