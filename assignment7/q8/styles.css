@@ -1,0 +1,16 @@
+/* Q8: Box Model Exploration
+   - shows content/padding/border/margin differences
+   - demonstrates default box-sizing vs border-box
+*/
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f7f9fc;padding:2rem}
+.stage{display:flex;gap:2rem;align-items:center;justify-content:center}
+.box-model{position:relative;width:200px}
+.content{background:#fff;padding:12px;border:2px solid #2b6cb0}
+.padding{position:absolute;inset:-12px;border:2px dashed rgba(43,108,176,.25)}
+.border{position:absolute;inset:-24px;border:3px solid rgba(47,133,90,.2)}
+.margin{position:absolute;inset:-40px;border:2px dotted rgba(183,121,31,.2)}
+.info{max-width:320px}
+
+/* Contrast: switch to border-box example */
+.content.border-box{box-sizing:border-box}

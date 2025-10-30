@@ -1,0 +1,31 @@
+/* Q5: Advanced Selectors
+   Examples:
+   - Attribute selectors
+   - Pseudo-classes and pseudo-elements
+   - Combinators: child (>), adjacent (+), general sibling (~), descendant
+*/
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;padding:2rem;background:#f7f9fc}
+/* attribute selector: style text inputs differently */
+input[type="text"]{border:2px solid #2b6cb0;padding:.5rem;border-radius:4px}
+input[type="email"]{border:2px dashed #b7791f;padding:.5rem;border-radius:4px}
+
+/* href^="https" selects links that begin with https */
+a[href^="https"]{color:#2b6cb0;text-decoration:underline}
+
+/* pseudo-classes */
+input:focus{outline:3px solid rgba(43,108,176,.15)}
+li:nth-child(odd){background:#fff}
+li:nth-child(even){background:#eef6ff}
+
+/* pseudo-elements */
+.items li::before{content:"• ";color:#2b6cb0}
+
+/* combinators */
+/* direct child: only h1 > span would be selected (example comment) */
+/* adjacent sibling: h1 + p {} would target a p immediately after h1 */
+/* general sibling: h1 ~ ul {} would target ul siblings after h1 */
+
+/* demonstration: style items that follow another element */
+h1 + form{margin-bottom:1rem}
+h1 ~ .items{padding-top:8px}

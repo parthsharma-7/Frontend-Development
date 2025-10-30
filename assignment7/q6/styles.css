@@ -1,0 +1,13 @@
+/* Q6: Transformations Showcase
+   - Demonstrate rotate, scale, translate, skew on hover
+*/
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb}
+.wrap{display:flex;gap:1rem;justify-content:center;align-items:center;padding:3rem;flex-wrap:wrap}
+.trans{text-align:center}
+.demo{width:140px;height:100px;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;transition:all .4s ease;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+.t-rotate:hover .demo{transform:rotate(12deg)}
+.t-scale:hover .demo{transform:scale(1.12)}
+.t-translate:hover .demo{transform:translateY(-12px)}
+.t-skew:hover .demo{transform:skewX(12deg)}
+figcaption{margin-top:.5rem;color:#555}
