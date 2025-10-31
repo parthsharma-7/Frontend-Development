@@ -1,0 +1,66 @@
+/* Task: CSS States & Tooltips
+   - Task1 demonstrates :hover, :focus, :active, :nth-child() on links, buttons, list items
+   - Task2 demonstrates pure-CSS tooltips using position:absolute and opacity transition
+*/
+:root{--accent:#2b6cb0;--accent-2:#2f855a;--muted:#8a8f98}
+*{box-sizing:border-box}
+body{font-family:Segoe UI,Roboto,Arial,sans-serif;margin:0;background:#f6f8fb;color:#111}
+.site-header{padding:1rem;text-align:center;background:#fff;border-bottom:1px solid #e6e9ef}
+.site-header .subtitle{color:var(--muted);margin-top:.25rem}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;padding:1.25rem;max-width:1100px;margin:1rem auto}
+.panel{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(15,20,30,.04)}
+
+/* ---------- Task1 styles ---------- */
+.demo-row{display:flex;gap:1rem;align-items:flex-start}
+.demo{flex:1}
+.explain{width:280px;padding-left:0.75rem}
+.explain h4{margin-top:0}
+.links a{display:inline-block;margin-right:.6rem;padding:.25rem .45rem;border-radius:4px;color:var(--accent);text-decoration:none;transition:background .18s,color .18s}
+
+/* :hover on links */
+.links a:hover{background:var(--accent);color:#fff}
+
+/* buttons */
+.buttons{display:flex;gap:.6rem;margin:0.5rem 0 1rem}
+.btn{padding:.5rem .75rem;border-radius:6px;border:1px solid #d5dbe6;background:#fff;cursor:pointer;transition:transform .08s ease,box-shadow .12s}
+.btn:hover{background:linear-gradient(180deg,#f0f6ff,#eaf4ff);transform:translateY(-2px)}
+.btn:active{transform:translateY(0.5px);box-shadow:inset 0 2px 6px rgba(0,0,0,.04)}
+
+/* :focus for accessibility (keyboard) */
+.btn:focus{outline:3px solid rgba(43,108,176,.18);outline-offset:3px}
+.links a:focus{outline:3px solid rgba(47,133,90,.12);outline-offset:3px}
+
+/* list items and nth-child demo */
+.items{list-style:none;padding:0;margin:0}
+.items li{padding:.6rem;border-radius:6px;margin-bottom:.4rem;transition:background .18s}
+.items li:nth-child(odd){background:#fff}
+.items li:nth-child(even){background:#f0f6ff}
+.items li:hover{background:#e6f2ff}
+
+/* active visual (on mouse down) */
+.items li:active{transform:scale(.998)}
+
+/* small explanatory note */
+.note{color:var(--muted);font-size:.9rem}
+
+/* ---------- Task2: Tooltips ---------- */
+.tooltip-row{display:flex;gap:1rem;align-items:center;justify-content:center;margin-top:0.5rem;flex-wrap:wrap}
+.tt-item{position:relative;display:inline-block}
+.tt-btn{padding:.6rem 1rem;border-radius:6px;border:1px solid #d5dbe6;background:#fff;cursor:pointer}
+
+/* tooltip: absolutely positioned, initially hidden with opacity:0 and translated */
+.tt{position:absolute;left:50%;transform:translate(-50%,8px);background:#222;color:#fff;padding:.45rem .6rem;border-radius:6px;font-size:.9rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s ease-in-out,transform .3s ease-in-out}
+.tt::after{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom-color:#222}
+
+/* top positioned tooltip modifier */
+.tt-top{bottom:100%;transform:translate(-50%,-8px)}
+.tt-top::after{top:auto;bottom:-6px;border-bottom-color:transparent;border-top-color:#222}
+
+/* show tooltip on hover and focus-within (keyboard) */
+.tt-item:hover .tt,.tt-item:focus-within .tt{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+
+.center{ text-align:center }
+.small{font-size:.9rem;color:var(--muted)}
+
+/* responsive: stack panels on small screens */
+@media (max-width:900px){.grid{grid-template-columns:1fr}}

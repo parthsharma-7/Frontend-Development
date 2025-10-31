@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSS States & Tooltips — Task</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>CSS States & Tooltips</h1>
+    <p class="subtitle">Task1: :hover, :focus, :active, :nth-child() — Task2: CSS tooltips (opacity transition)</p>
+  </header>
+
+  <main class="grid">
+    <!-- Task 1: states demo + explanations -->
+    <section class="panel">
+      <h2>Task 1 — State selectors</h2>
+
+      <div class="demo-row">
+        <div class="demo">
+          <h3>Links</h3>
+          <nav class="links">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+          </nav>
+
+          <h3>Buttons</h3>
+          <div class="buttons">
+            <button class="btn">Normal</button>
+            <button class="btn">Hover / Active</button>
+            <button class="btn">Focus</button>
+          </div>
+
+          <h3>List items (nth-child)</h3>
+          <ul class="items">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+          </ul>
+        </div>
+
+        <aside class="explain">
+          <h4>What to look for</h4>
+          <ol>
+            <li><strong>:hover</strong> — visual change on pointer hover (links &amp; buttons).</li>
+            <li><strong>:focus</strong> — keyboard focus (tab) state — important for accessibility.</li>
+            <li><strong>:active</strong> — while the control is being pressed.</li>
+            <li><strong>:nth-child()</strong> — style specific list items (striping / emphasis).</li>
+          </ol>
+          <p class="note">All states use color/background changes to make the differences obvious. Try keyboard Tab to see <code>:focus</code>.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Task 2: tooltips -->
+    <section class="panel">
+      <h2>Task 2 — Pure CSS Tooltips</h2>
+      <p class="center">Buttons below show tooltips implemented with <code>position: absolute</code> plus opacity/transform transitions.</p>
+
+      <div class="tooltip-row">
+        <div class="tt-item">
+          <button class="tt-btn">Hover me</button>
+          <span class="tt">Tooltip for hover</span>
+        </div>
+
+        <div class="tt-item">
+          <button class="tt-btn">Focus me</button>
+          <span class="tt">Keyboard focus tooltip</span>
+        </div>
+
+        <div class="tt-item">
+          <button class="tt-btn">Top tooltip</button>
+          <span class="tt tt-top">Top positioned tooltip</span>
+        </div>
+      </div>
+
+      <p class="center small">Tooltips fade in/out (0.3s) and remain accessible when focused (use Tab to reach buttons).</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">Task folder: <code>task_css_classes/</code> — Demo of CSS states &amp; tooltips</footer>
+</body>
+</html>
