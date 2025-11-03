@@ -1,0 +1,16 @@
+/* Q6: Animation demos
+   - moving box (left-right)
+   - bouncing ball
+   - color-changing text block
+*/
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f8fb}
+.center{min-height:100vh;display:flex;align-items:center;justify-content:center;gap:1rem}
+.anim{width:100px;height:100px;border-radius:8px;background:#2b6cb0;display:flex;align-items:center;justify-content:center;color:#fff}
+.moving{animation:move 1500ms ease-in-out infinite alternate}
+.bounce{background:#2f855a;animation:bounce 900ms ease-in-out infinite}
+.color{background:#b7791f;animation:colorChange 2400ms ease-in-out infinite alternate}
+
+@keyframes move{from{transform:translateX(-20px)}to{transform:translateX(20px)}}
+@keyframes bounce{0%{transform:translateY(0)}50%{transform:translateY(-30px)}100%{transform:translateY(0)}}
+@keyframes colorChange{from{background:#b7791f}50%{background:#ffd39f}to{background:#b7791f}}

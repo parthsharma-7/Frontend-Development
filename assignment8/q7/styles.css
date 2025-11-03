@@ -1,0 +1,11 @@
+/* Q7: UI components (search, buttons, dropdown) */
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Roboto,Arial;background:#f4f6fb;display:flex;align-items:center;justify-content:center;height:100vh}
+.card{background:linear-gradient(180deg,#fff,#fbfdff);padding:1rem;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.06);display:flex;gap:.75rem;align-items:center}
+.search{padding:.6rem 1rem;border-radius:8px;border:1px solid #e6eefb;min-width:240px}
+.controls{display:flex;gap:.5rem;align-items:center}
+.btn{padding:.5rem .8rem;border-radius:8px;border:0;background:#2b6cb0;color:#fff;cursor:pointer}
+.btn:focus{outline:3px solid rgba(43,108,176,.14);outline-offset:3px}
+.dropdown{position:relative}
+.menu{position:absolute;top:calc(100% + 6px);left:0;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,.08);list-style:none;padding:.5rem;border-radius:6px;display:none}
+.dropdown:hover .menu{display:block}
