@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Parallax Gallery</title>
+    <link rel="stylesheet" href="parallax-gallery.css">
+</head>
+<body>
+    <header class="parallax-header">
+        <h1>Nature Gallery</h1>
+        <p>Scroll to explore</p>
+    </header>
+
+    <div class="gallery-container">
+        <section class="gallery-item">
+            <div class="parallax-image">
+                <div class="overlay">
+                    <h2>Mountains</h2>
+                </div>
+            </div>
+            <div class="content">
+                <p>Majestic peaks reaching for the sky, covered in eternal snow.</p>
+            </div>
+        </section>
+
+        <section class="gallery-item">
+            <div class="parallax-image">
+                <div class="overlay">
+                    <h2>Forests</h2>
+                </div>
+            </div>
+            <div class="content">
+                <p>Dense woodlands teeming with life and mystery.</p>
+            </div>
+        </section>
+
+        <section class="gallery-item">
+            <div class="parallax-image">
+                <div class="overlay">
+                    <h2>Beaches</h2>
+                </div>
+            </div>
+            <div class="content">
+                <p>Golden sands meeting crystal clear waters under endless skies.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax-image');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const rect = element.getBoundingClientRect();
+                const visible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (visible) {
+                    const yPos = -(window.pageYOffset - rect.top) * speed;
+                    element.style.backgroundPositionY = `${yPos}px`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

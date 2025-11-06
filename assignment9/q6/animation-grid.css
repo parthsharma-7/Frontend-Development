@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.grid-item {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 8px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hover Animations */
+.grid-item:hover {
+    transform: scale(1.1);
+    background-color: #3a3a3a;
+    animation: pulse 1s infinite;
+}
+
+/* Individual Grid Item Animations */
+.grid-item:nth-child(1) {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.grid-item:nth-child(2) {
+    animation: slideIn 0.5s ease-out 0.1s backwards;
+}
+
+.grid-item:nth-child(3) {
+    animation: rotate 0.5s ease-out 0.2s backwards;
+}
+
+.grid-item:nth-child(4) {
+    animation: bounce 0.5s ease-out 0.3s backwards;
+}
+
+.grid-item:nth-child(5) {
+    animation: swing 0.5s ease-out 0.4s backwards;
+}
+
+.grid-item:nth-child(6) {
+    animation: shake 0.5s ease-out 0.5s backwards;
+}
+
+.grid-item:nth-child(7) {
+    animation: flip 0.5s ease-out 0.6s backwards;
+}
+
+.grid-item:nth-child(8) {
+    animation: zoom 0.5s ease-out 0.7s backwards;
+}
+
+.grid-item:nth-child(9) {
+    animation: spin 0.5s ease-out 0.8s backwards;
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(-180deg); opacity: 0; }
+    to { transform: rotate(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(-100px); opacity: 0; }
+    60% { transform: translateY(20px); opacity: 1; }
+    100% { transform: translateY(0); }
+}
+
+@keyframes swing {
+    0% { transform: rotate(-15deg); opacity: 0; }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0); opacity: 1; }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+@keyframes flip {
+    from { transform: perspective(400px) rotateY(90deg); opacity: 0; }
+    to { transform: perspective(400px) rotateY(0); opacity: 1; }
+}
+
+@keyframes zoom {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0); opacity: 0; }
+    to { transform: rotate(360deg); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-item {
+        font-size: 20px;
+        padding: 20px;
+    }
+}

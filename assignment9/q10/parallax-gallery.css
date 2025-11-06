@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.parallax-header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=1440&q=80');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.parallax-header h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.parallax-header p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.gallery-container {
+    padding: 2rem 0;
+}
+
+.gallery-item {
+    position: relative;
+    margin-bottom: 4rem;
+}
+
+.parallax-image {
+    height: 60vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.gallery-item:nth-child(1) .parallax-image {
+    background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=1440&q=80');
+}
+
+.gallery-item:nth-child(2) .parallax-image {
+    background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1440&q=80');
+}
+
+.gallery-item:nth-child(3) .parallax-image {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1440&q=80');
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.overlay:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.overlay h2 {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transform: translateY(20px);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.content {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: fadeInUp 0.5s ease 0.3s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .parallax-header h1 {
+        font-size: 3rem;
+    }
+
+    .parallax-header p {
+        font-size: 1.2rem;
+    }
+
+    .parallax-image {
+        height: 40vh;
+        background-attachment: scroll;
+    }
+
+    .overlay h2 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .parallax-header h1 {
+        font-size: 2rem;
+    }
+
+    .parallax-header p {
+        font-size: 1rem;
+    }
+
+    .overlay h2 {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}

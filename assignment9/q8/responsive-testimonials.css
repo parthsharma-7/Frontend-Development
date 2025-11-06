@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+    display: grid;
+    place-items: center;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.testimonial {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.info h3 {
+    color: #2d3748;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.info p {
+    color: #718096;
+    font-size: 0.9rem;
+}
+
+.quote {
+    color: #4a5568;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.highlight .info h3,
+.highlight .info p,
+.highlight .quote {
+    color: white;
+}
+
+/* Animation for testimonials on load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.testimonial {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.testimonial:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.testimonial:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.testimonial:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.testimonial:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+    
+    .testimonial {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .profile img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .info h3 {
+        font-size: 1rem;
+    }
+    
+    .quote {
+        font-size: 0.9rem;
+    }
+}

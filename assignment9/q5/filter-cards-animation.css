@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f2f5;
+}
+
+.profiles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.profile {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.profile h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.profile p {
+    color: #666;
+}
+
+/* Filter and Animation Effects */
+.profile:nth-child(1) img {
+    filter: sepia(0.5);
+}
+
+.profile:nth-child(2) img {
+    filter: grayscale(0.7);
+}
+
+.profile:nth-child(3) img {
+    filter: brightness(1.2) contrast(1.1);
+}
+
+.profile:hover {
+    transform: translateY(-10px);
+}
+
+.profile:hover img {
+    filter: none;
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .profiles {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .profiles {
+        grid-template-columns: 1fr;
+    }
+}
