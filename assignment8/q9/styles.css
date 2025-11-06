@@ -1,7 +1,0 @@
-/* Q9: Combined effects - pseudo-classes, transitions, transforms */
-body{font-family:Arial,Helvetica,sans-serif;margin:0;display:flex;align-items:center;justify-content:center;height:100vh;background:#f6f8fb}
-.examples{display:flex;gap:1rem}
-.ex{padding:.6rem 1rem;border-radius:8px;border:0;background:#2b6cb0;color:#fff;transition:all .3s ease;box-shadow:0 6px 18px rgba(0,0,0,.06);cursor:pointer}
-.ex:hover{transform:scale(1.06);background:#2f855a;box-shadow:0 18px 40px rgba(0,0,0,.14)}
-.ex:active{transform:scale(.98)}
-.ex:focus{outline:3px solid rgba(43,108,176,.16);outline-offset:4px}
