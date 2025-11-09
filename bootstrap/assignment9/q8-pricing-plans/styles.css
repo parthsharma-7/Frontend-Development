@@ -1,0 +1,43 @@
+/* Pricing card styles */
+.price-card {
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
+}
+
+/* Price styling */
+.card-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.period {
+    font-size: 1rem;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* List item spacing */
+.list-unstyled li {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+/* Button transitions */
+.btn {
+    transition: all 0.3s ease;
+}
+
+/* Pro plan highlight */
+.bg-primary.price-card {
+    transform: scale(1.05);
+}
+
+.bg-primary.price-card:hover {
+    transform: scale(1.05) translateY(-10px);
+}

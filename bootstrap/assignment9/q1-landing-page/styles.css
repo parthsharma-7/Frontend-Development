@@ -1,0 +1,21 @@
+/* Custom styles to complement Bootstrap */
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Add smooth transitions for interactive elements */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsive image adjustments */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,25 @@
+/* Custom styles for notifications */
+.alert {
+    border-left-width: 4px;
+    margin-bottom: 1rem;
+}
+
+.card {
+    border: none;
+}
+
+/* Summary well styling */
+.bg-light {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Alert animations */
+.alert.fade {
+    transition: opacity 0.3s linear;
+}
+
+/* List item spacing */
+.list-unstyled li {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}

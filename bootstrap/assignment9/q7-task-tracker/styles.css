@@ -1,0 +1,34 @@
+/* Task list styling */
+.list-group-item {
+    transition: background-color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Badge styling */
+.badge {
+    font-weight: normal;
+    padding: 0.5em 0.8em;
+}
+
+/* Button styling */
+.btn-success {
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+}
+
+/* Card styling */
+.card {
+    border: none;
+}
+
+/* Header badge styling */
+header .badge {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}

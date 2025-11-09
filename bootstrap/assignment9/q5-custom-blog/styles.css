@@ -1,0 +1,47 @@
+/* Custom theme variables */
+:root {
+    --bs-primary: #6200ea;
+    --bs-font-sans-serif: 'Poppins', sans-serif;
+}
+
+/* Custom theme classes */
+.bg-custom {
+    background-color: var(--bs-primary);
+}
+
+.btn-custom {
+    background-color: var(--bs-primary);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: #5000c4;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Card styles */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Typography */
+body {
+    font-family: var(--bs-font-sans-serif);
+}
+
+.card-title {
+    color: var(--bs-primary);
+}
+
+/* Footer styling */
+footer {
+    margin-top: 3rem;
+}

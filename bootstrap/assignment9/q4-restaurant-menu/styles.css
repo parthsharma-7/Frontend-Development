@@ -1,0 +1,24 @@
+/* Custom styles for restaurant menu */
+body {
+    font-family: 'Georgia', serif;
+}
+
+.table {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.list-group-item {
+    transition: all 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+/* Image caption styling */
+.card img {
+    border-bottom: 3px solid #dee2e6;
+}
