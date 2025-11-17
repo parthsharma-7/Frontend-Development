@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Simple Step Goal Tracker</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 60px; }
+    input { padding: 10px; font-size: 16px; }
+    button { padding: 10px 18px; font-size: 16px; margin-left: 5px; cursor: pointer; }
+    .message { margin-top: 20px; font-size: 22px; font-weight: bold; }
+    .progress { margin-top: 25px; width: 200px; height: 200px; border-radius: 50%; border: 10px solid lightgray; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  </style>
+</head>
+<body>
+
+<h1>Step Goal Tracker</h1>
+<input id="stepsInput" type="number" placeholder="Enter steps" />
+<button onclick="checkGoal()">Check</button>
+
+<div class="progress" id="progressCircle">0%</div>
+<div class="message" id="result">Keep Going</div>
+
+<script>
+  const GOAL = 10000;
+
+  function checkGoal() {
+    const steps = Number(document.getElementById("stepsInput").value);
+    const result = document.getElementById("result");
+    const circle = document.getElementById("progressCircle");
+
+    const percent = Math.min(100, (steps / GOAL) * 100).toFixed(0);
+    circle.textContent = percent + "%";
+
+    result.textContent = steps >= GOAL ? "Goal Achieved" : "Keep Going"; // ternary operator
+  }
+</script>
+
+</body>
+</html>
