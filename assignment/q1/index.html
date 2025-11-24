@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q1 - Student Result Processing</title>
+</head>
+<body>
+  <h1>Q1 - Student Result Processing</h1>
+  <pre id="output"></pre>
+
+  <script>
+    class Student {
+      constructor(name, marks) {
+        this.name = name;
+        this.marks = marks;
+      }
+
+      calculateAverage() {
+        const sum = this.marks.reduce((acc, mark) => acc + mark, 0);
+        return this.marks.length ? sum / this.marks.length : 0;
+      }
+
+      getGrade() {
+        const avg = this.calculateAverage();
+        if (avg >= 90) return 'A';
+        if (avg >= 75) return 'B';
+        if (avg >= 60) return 'C';
+        return 'F';
+      }
+    }
+
+    const students = [
+      new Student('Alice', [95, 92, 88]),
+      new Student('Bob', [76, 82, 79]),
+      new Student('Charlie', [55, 60, 58])
+    ];
+
+    const out = document.getElementById('output');
+    students.forEach((s) => {
+      const avg = s.calculateAverage().toFixed(2);
+      const grade = s.getGrade();
+      const line = `${s.name} - Average: ${avg}, Grade: ${grade}`;
+      console.log(line);
+      out.textContent += line + '\n';
+    });
+  </script>
+</body>
+</html>

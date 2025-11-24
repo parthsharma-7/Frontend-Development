@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q2 - Online Food Ordering</title>
+</head>
+<body>
+  <h1>Q2 - Online Food Ordering</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const menu = {
+      burger: 120,
+      pizza: 250,
+      fries: 80,
+      coke: 40
+    };
+
+    function calculateBill(orderItems) {
+      const prices = orderItems.map((item) => {
+        if (!(item in menu)) {
+          throw new Error(`Invalid item ordered: ${item}`);
+        }
+        return menu[item];
+      });
+
+      const total = prices.reduce((sum, price) => sum + price, 0);
+      return total;
+    }
+
+    const out = document.getElementById('output');
+
+    function testOrder(orderItems) {
+      try {
+        const total = calculateBill(orderItems);
+        const line = `Order: [${orderItems.join(', ')}] -> Total: Rs. ${total}`;
+        console.log(line);
+        out.textContent += line + '\n';
+      } catch (err) {
+        const msg = `Error for order [${orderItems.join(', ')}]: ${err.message}`;
+        console.error(msg);
+        out.textContent += msg + '\n';
+      }
+    }
+
+    testOrder(['burger', 'fries', 'coke']);
+    testOrder(['pizza', 'coke']);
+    testOrder(['burger', 'pasta']); // invalid item to show error handling
+  </script>
+</body>
+</html>

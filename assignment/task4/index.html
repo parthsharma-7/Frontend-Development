@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 4 - Theme Switcher</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; transition: background-color 0.2s, color 0.2s; }
+    .theme-light { background-color: #ffffff; color: #000000; }
+    .theme-dark { background-color: #222222; color: #ffffff; }
+    .theme-blue { background-color: #e0f0ff; color: #003366; }
+    button { margin-right: 8px; padding: 6px 12px; }
+  </style>
+</head>
+<body class="theme-light" data-theme="light">
+  <h1>Theme Switcher</h1>
+  <p>Current theme is stored in <code>data-theme</code> on the &lt;body&gt;.</p>
+  <button data-theme-btn="light">Light</button>
+  <button data-theme-btn="dark">Dark</button>
+  <button data-theme-btn="blue">Blue</button>
+
+  <script>
+    function applyTheme(theme) {
+      document.body.setAttribute('class', `theme-${theme}`);
+      document.body.setAttribute('data-theme', theme);
+    }
+
+    document.querySelectorAll('button[data-theme-btn]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-theme-btn');
+        applyTheme(theme);
+      });
+    });
+  </script>
+</body>
+</html>

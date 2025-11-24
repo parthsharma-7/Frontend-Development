@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q5 - Ride-Sharing Application</title>
+</head>
+<body>
+  <h1>Q5 - Ride-Sharing Application</h1>
+  <pre id="output"></pre>
+
+  <script>
+    class User {
+      constructor(name, rating) {
+        this.name = name;
+        this.rating = rating;
+      }
+
+      getProfile() {
+        return `${this.name} (Rating: ${this.rating})`;
+      }
+    }
+
+    class Driver extends User {
+      constructor(name, rating, vehicle) {
+        super(name, rating);
+        this.vehicle = vehicle; // e.g. { model, plate }
+      }
+
+      getProfile() {
+        return `${this.name} - Driver of ${this.vehicle.model} (${this.vehicle.plate}), Rating: ${this.rating}`;
+      }
+    }
+
+    class Trip {
+      constructor(user, driver, fromLocation, toLocation, distanceKm) {
+        this.user = user;
+        this.driver = driver;
+        this.fromLocation = fromLocation;
+        this.toLocation = toLocation;
+        this.distanceKm = distanceKm;
+      }
+
+      calculateFare(ratePerKm) {
+        return this.distanceKm * ratePerKm;
+      }
+
+      getSummary(ratePerKm) {
+        const fare = this.calculateFare(ratePerKm);
+        return `Trip for ${this.user.getProfile()} with ${this.driver.getProfile()} from ${this.fromLocation} to ${this.toLocation}, Distance: ${this.distanceKm} km, Fare: Rs. ${fare.toFixed(2)}`;
+      }
+    }
+
+    const user = new User('Alice', 4.8);
+    const driver = new Driver('Bob', 4.9, { model: 'Toyota Etios', plate: 'MH12 AB 1234' });
+    const trip = new Trip(user, driver, 'Pune Station', 'Hinjewadi', 18.5);
+
+    const out = document.getElementById('output');
+    const summary = trip.getSummary(12); // Rs. 12 per km
+    console.log(summary);
+    out.textContent = summary;
+  </script>
+</body>
+</html>

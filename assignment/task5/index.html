@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 5 - Image Gallery with Modal</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 150px); gap: 10px; }
+    .gallery img { width: 150px; height: 100px; object-fit: cover; cursor: pointer; border: 1px solid #ccc; }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; }
+    .hidden { display: none; }
+    .modal { background: white; padding: 10px; border-radius: 4px; }
+    .modal img { max-width: 80vw; max-height: 80vh; }
+  </style>
+</head>
+<body>
+  <h1>Image Gallery with Modal Preview</h1>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/300x200?text=1" data-large="https://via.placeholder.com/800x600?text=1" alt="Image 1" />
+    <img src="https://via.placeholder.com/300x200?text=2" data-large="https://via.placeholder.com/800x600?text=2" alt="Image 2" />
+    <img src="https://via.placeholder.com/300x200?text=3" data-large="https://via.placeholder.com/800x600?text=3" alt="Image 3" />
+    <img src="https://via.placeholder.com/300x200?text=4" data-large="https://via.placeholder.com/800x600?text=4" alt="Image 4" />
+    <img src="https://via.placeholder.com/300x200?text=5" data-large="https://via.placeholder.com/800x600?text=5" alt="Image 5" />
+    <img src="https://via.placeholder.com/300x200?text=6" data-large="https://via.placeholder.com/800x600?text=6" alt="Image 6" />
+  </div>
+
+  <div id="overlay" class="overlay hidden">
+    <div id="modal" class="modal">
+      <img id="modal-img" src="" alt="Preview" />
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById('overlay');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+
+    document.querySelectorAll('.gallery img').forEach((img) => {
+      img.addEventListener('click', () => {
+        const large = img.getAttribute('data-large') || img.src;
+        modalImg.src = large;
+        overlay.classList.remove('hidden');
+      });
+    });
+
+    overlay.addEventListener('click', () => {
+      overlay.classList.add('hidden');
+      modalImg.src = '';
+    });
+
+    modal.addEventListener('click', (e) => {
+      e.stopPropagation(); // clicking inside modal should not close it
+    });
+  </script>
+</body>
+</html>

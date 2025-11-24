@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Task 1 - Dynamic Product List Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #product-input { padding: 6px; width: 220px; }
+    #add-btn { padding: 6px 12px; }
+    ul { margin-top: 15px; padding-left: 0; }
+    li { list-style: none; margin-bottom: 8px; display: flex; gap: 8px; align-items: center; }
+    .name { flex: 1; }
+    .edit-input { flex: 1; padding: 4px; }
+    button { padding: 4px 8px; }
+  </style>
+</head>
+<body>
+  <h1>Dynamic Product List Manager</h1>
+  <input id="product-input" type="text" placeholder="Enter product name" />
+  <button id="add-btn">Add</button>
+  <ul id="product-list"></ul>
+
+  <script>
+    const input = document.getElementById('product-input');
+    const addBtn = document.getElementById('add-btn');
+    const list = document.getElementById('product-list');
+
+    let currentEditing = null; // li element currently in edit mode
+
+    function addProduct() {
+      const value = input.value.trim();
+      if (!value) return;
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="name">${value}</span>
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      `;
+      list.appendChild(li);
+      input.value = '';
+      input.focus();
+    }
+
+    addBtn.addEventListener('click', addProduct);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') addProduct();
+    });
+
+    // Event delegation for Edit/Delete
+    list.addEventListener('click', (e) => {
+      const target = e.target;
+      if (target.classList.contains('delete-btn')) {
+        const li = target.closest('li');
+        if (currentEditing === li) currentEditing = null;
+        li.remove();
+      } else if (target.classList.contains('edit-btn')) {
+        const li = target.closest('li');
+        enterEditMode(li);
+      }
+    });
+
+    function enterEditMode(li) {
+      if (currentEditing && currentEditing !== li) {
+        saveEdit(currentEditing);
+      }
+      if (li === currentEditing) return;
+
+      const span = li.querySelector('.name');
+      const text = span.textContent;
+      const inputEl = document.createElement('input');
+      inputEl.type = 'text';
+      inputEl.value = text;
+      inputEl.className = 'edit-input';
+
+      li.replaceChild(inputEl, span);
+      inputEl.focus();
+      currentEditing = li;
+
+      inputEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          saveEdit(li);
+        }
+      });
+    }
+
+    function saveEdit(li) {
+      const inputEl = li.querySelector('.edit-input');
+      if (!inputEl) return;
+      const newText = inputEl.value.trim() || 'Untitled';
+      const span = document.createElement('span');
+      span.className = 'name';
+      span.textContent = newText;
+      li.replaceChild(span, inputEl);
+      currentEditing = null;
+    }
+
+    // Auto-save when clicking outside the edited item
+    document.addEventListener('click', (e) => {
+      if (!currentEditing) return;
+      if (currentEditing.contains(e.target)) return; // clicked inside edited item
+      saveEdit(currentEditing);
+    });
+  </script>
+</body>
+</html>

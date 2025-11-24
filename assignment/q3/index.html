@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q3 - Product Discount System</title>
+</head>
+<body>
+  <h1>Q3 - Product Discount System</h1>
+  <pre id="output"></pre>
+
+  <script>
+    function Product(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+
+    Product.prototype.applyDiscount = function(percent) {
+      const discountedPrice = this.price - (this.price * (percent / 100));
+      return discountedPrice;
+    };
+
+    const products = [
+      new Product('Laptop', 60000),
+      new Product('Phone', 30000),
+      new Product('Headphones', 2000)
+    ];
+
+    const discounts = [10, 20, 5];
+
+    const out = document.getElementById('output');
+
+    products.forEach((p, index) => {
+      const percent = discounts[index];
+      const newPrice = p.applyDiscount(percent);
+      const line = `${p.name} original: Rs. ${p.price}, after ${percent}% discount: Rs. ${newPrice.toFixed(2)}`;
+      console.log(line);
+      out.textContent += line + '\n';
+    });
+
+    out.textContent += '\nAbstraction: The applyDiscount method hides the discount calculation logic inside the Product object, so the caller just provides a percentage without worrying about how the new price is computed.\n';
+  </script>
+</body>
+</html>

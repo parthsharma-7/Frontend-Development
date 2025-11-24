@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q4 - Employee Inheritance</title>
+</head>
+<body>
+  <h1>Q4 - Employee Inheritance</h1>
+  <pre id="output"></pre>
+
+  <script>
+    class Employee {
+      constructor(name, department) {
+        this.name = name;
+        this.department = department;
+      }
+
+      work() {
+        return `${this.name} works in ${this.department} department.`;
+      }
+    }
+
+    class Manager extends Employee {
+      constructor(name, department, teamSize) {
+        super(name, department);
+        this.teamSize = teamSize;
+      }
+
+      work() {
+        return `${this.name} manages a team of ${this.teamSize} in ${this.department} department.`;
+      }
+    }
+
+    const employees = [
+      new Employee('Alice', 'Engineering'),
+      new Manager('Bob', 'Engineering', 5),
+      new Manager('Charlie', 'Sales', 8)
+    ];
+
+    const out = document.getElementById('output');
+    employees.forEach((emp) => {
+      const line = emp.work(); // runtime polymorphism: correct method is chosen at runtime
+      console.log(line);
+      out.textContent += line + '\n';
+    });
+  </script>
+</body>
+</html>
