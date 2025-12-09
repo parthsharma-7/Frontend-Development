@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q5 - Team Members Directory</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .department { border: 1px solid #ccc; margin-bottom: 1rem; padding: 0.75rem; }
+    .department-header { cursor: pointer; font-weight: bold; margin-bottom: 0.5rem; }
+    .team { margin-left: 1rem; }
+    .manager { cursor: pointer; font-weight: bold; }
+    .employee { margin-left: 1rem; cursor: pointer; }
+    .highlight { background-color: #fff9c4; }
+    .sibling-highlight { background-color: #c5e1a5; }
+    .contact-info { display: none; font-size: 0.9rem; color: #555; }
+    .collapsed .team { display: none; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Team Members Directory</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="directory-heading">
+      <h2 id="directory-heading">Departments and Teams</h2>
+
+      <!-- Department 1 -->
+      <div class="department" data-dept="engineering">
+        <div class="department-header">Engineering Department</div>
+        <div class="team">
+          <div class="manager">Alice (Manager)
+            <div class="employee">Bob (Developer)<span class="contact-info"> - bob@example.com</span></div>
+            <div class="employee">Charlie (Developer)<span class="contact-info"> - charlie@example.com</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department 2 -->
+      <div class="department" data-dept="marketing">
+        <div class="department-header">Marketing Department</div>
+        <div class="team">
+          <div class="manager">David (Manager)
+            <div class="employee">Eva (Specialist)<span class="contact-info"> - eva@example.com</span></div>
+            <div class="employee">Frank (Coordinator)<span class="contact-info"> - frank@example.com</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department 3 -->
+      <div class="department" data-dept="sales">
+        <div class="department-header">Sales Department</div>
+        <div class="team">
+          <div class="manager">Grace (Manager)
+            <div class="employee">Henry (Sales Rep)<span class="contact-info"> - henry@example.com</span></div>
+            <div class="employee">Ivy (Sales Rep)<span class="contact-info"> - ivy@example.com</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department 4 -->
+      <div class="department" data-dept="hr">
+        <div class="department-header">HR Department</div>
+        <div class="team">
+          <div class="manager">Jack (Manager)
+            <div class="employee">Karen (Recruiter)<span class="contact-info"> - karen@example.com</span></div>
+            <div class="employee">Leo (HR Generalist)<span class="contact-info"> - leo@example.com</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Department 5 -->
+      <div class="department" data-dept="support">
+        <div class="department-header">Support Department</div>
+        <div class="team">
+          <div class="manager">Mia (Manager)
+            <div class="employee">Noah (Support Agent)<span class="contact-info"> - noah@example.com</span></div>
+            <div class="employee">Olivia (Support Agent)<span class="contact-info"> - olivia@example.com</span></div>
+          </div>
+        </div>
+      </div>
+
+      <button id="random-highlight">Highlight Random Employee and Siblings</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My jQuery Assignment</p>
+  </footer>
+
+  <script src="q5.js"></script>
+</body>
+</html>

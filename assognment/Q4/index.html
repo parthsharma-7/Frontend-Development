@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q4 - Special Offer Banner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .banner-container { margin-top: 1rem; }
+    .banner { display: none; padding: 1rem; margin-bottom: 0.75rem; color: #fff; }
+    .banner-1 { background-color: #e91e63; }
+    .banner-2 { background-color: #3f51b5; }
+    .banner-3 { background-color: #4caf50; }
+    .banner-4 { background-color: #ff9800; }
+    .banner-5 { background-color: #9c27b0; }
+    .controls button { margin-right: 0.5rem; margin-top: 0.5rem; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Special Offer Banners</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="banner-heading">
+      <h2 id="banner-heading">Current Promotions</h2>
+
+      <div class="controls">
+        <button id="hide-banners">Hide Banners</button>
+        <button id="show-banners">Show Banners</button>
+        <button id="slide-toggle-banners">Slide Up/Down Banners</button>
+        <button id="fade-out-banners">Fade Out Banners</button>
+        <button id="fade-in-banners">Fade In Banners</button>
+      </div>
+
+      <div class="banner-container">
+        <!-- At least 5 banners -->
+        <div class="banner banner-1">Limited time offer: 30% off on all electronics!</div>
+        <div class="banner banner-2">Free shipping on orders over $50!</div>
+        <div class="banner banner-3">Buy 1 get 1 free on select items!</div>
+        <div class="banner banner-4">Weekend sale: Extra 15% off clearance!</div>
+        <div class="banner banner-5">New arrivals: Check out our latest collection!</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My jQuery Assignment</p>
+  </footer>
+
+  <script src="q4.js"></script>
+</body>
+</html>

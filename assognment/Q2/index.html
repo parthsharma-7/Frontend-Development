@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q2 - Product Highlight</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .product-list { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .product { border: 1px solid #ccc; padding: 1rem; width: 180px; position: relative; cursor: pointer; }
+    .product.highlight { background-color: #fff9c4; }
+    .product-details { display: none; font-size: 0.9rem; color: #555; margin-top: 0.5rem; }
+    .favorite { position: absolute; top: 8px; right: 8px; cursor: pointer; }
+    .favorite.selected { color: red; }
+    /* 4. Apply different styles to products with discounts using attribute selector */
+    .product[data-discount="true"] { border-color: #4caf50; box-shadow: 0 0 5px #4caf50; }
+    .out-of-stock { color: #f44336; font-weight: bold; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Featured Products</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="products-heading">
+      <h2 id="products-heading">Product List</h2>
+      <div class="product-list">
+        <!-- Include at least 5 products -->
+        <article class="product" data-name="Laptop" data-out-of-stock="false" data-discount="true">
+          <h3>Laptop Pro</h3>
+          <p>$1200</p>
+          <span class="favorite" aria-label="Favorite">★</span>
+          <p class="product-details">Powerful laptop for professionals.</p>
+        </article>
+
+        <article class="product" data-name="Headphones" data-out-of-stock="false" data-discount="false">
+          <h3>Noise-Canceling Headphones</h3>
+          <p>$199</p>
+          <span class="favorite" aria-label="Favorite">★</span>
+          <p class="product-details">Immersive sound with active noise cancellation.</p>
+        </article>
+
+        <article class="product" data-name="Smartphone" data-out-of-stock="true" data-discount="true">
+          <h3>Smartphone X</h3>
+          <p>$899 <span class="out-of-stock">(Out of stock)</span></p>
+          <span class="favorite" aria-label="Favorite">★</span>
+          <p class="product-details">Latest smartphone with stunning camera.</p>
+        </article>
+
+        <article class="product" data-name="Smartwatch" data-out-of-stock="false" data-discount="false">
+          <h3>Fitness Smartwatch</h3>
+          <p>$149</p>
+          <span class="favorite" aria-label="Favorite">★</span>
+          <p class="product-details">Track your health and notifications on the go.</p>
+        </article>
+
+        <article class="product" data-name="Camera" data-out-of-stock="true" data-discount="true">
+          <h3>DSLR Camera</h3>
+          <p>$650 <span class="out-of-stock">(Out of stock)</span></p>
+          <span class="favorite" aria-label="Favorite">★</span>
+          <p class="product-details">Capture high-quality photos and videos.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My jQuery Assignment</p>
+  </footer>
+
+  <script src="q2.js"></script>
+</body>
+</html>

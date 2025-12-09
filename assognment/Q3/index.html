@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Q3 - Interactive FAQ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .faq-item { border-bottom: 1px solid #ccc; padding: 0.75rem 0; }
+    .question { font-weight: bold; cursor: pointer; }
+    .question.hovered { color: #1976d2; }
+    .answer { display: none; margin-top: 0.5rem; }
+    .question.highlight-parent { background-color: #fff9c4; }
+    .answer-input { display: block; margin-top: 0.5rem; }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>FAQ - Interactive Section</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <p class="question">What is jQuery?</p>
+        <div class="answer">
+          <p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+          <input class="answer-input" type="text" placeholder="Was this helpful?" />
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="question">How do I include jQuery in a page?</p>
+        <div class="answer">
+          <p>You can include it via a CDN script tag or by hosting it locally.</p>
+          <input class="answer-input" type="text" placeholder="Your feedback" />
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="question">What is a DOM?</p>
+        <div class="answer">
+          <p>The DOM is a programming interface for HTML and XML documents.</p>
+          <input class="answer-input" type="text" placeholder="Add a note" />
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="question">What is an event in JavaScript?</p>
+        <div class="answer">
+          <p>An event is an action that occurs in the browser, such as a click or keypress.</p>
+          <input class="answer-input" type="text" placeholder="Example event" />
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <p class="question">Can I use jQuery with other libraries?</p>
+        <div class="answer">
+          <p>Yes, jQuery can be used alongside other libraries using noConflict if needed.</p>
+          <input class="answer-input" type="text" placeholder="Your comment" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My jQuery Assignment</p>
+  </footer>
+
+  <script src="q3.js"></script>
+</body>
+</html>
