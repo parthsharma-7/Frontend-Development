@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 10 - Q4 Multi-API Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .dashboard { display: flex; gap: 16px; }
+    .card { border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 150px; text-align: center; }
+    .skeleton { background: #eee; height: 24px; border-radius: 4px; animation: pulse 1.2s infinite; }
+    #warning { color: red; margin-top: 12px; font-weight: bold; }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Q4 - Multi-API Dashboard (Fetch + Promise.all)</h1>
+  <p>JSON Server: <code>json-server --watch db.json --port 3004</code></p>
+
+  <div class="dashboard">
+    <div class="card">
+      <h3>Total Users</h3>
+      <div id="usersCount" class="skeleton"></div>
+    </div>
+    <div class="card">
+      <h3>Total Orders</h3>
+      <div id="ordersCount" class="skeleton"></div>
+    </div>
+    <div class="card">
+      <h3>Total Products</h3>
+      <div id="productsCount" class="skeleton"></div>
+    </div>
+  </div>
+
+  <div id="warning"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

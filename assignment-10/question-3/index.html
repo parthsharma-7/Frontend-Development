@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 10 - Q3 Task Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 6px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    .completed { text-decoration: line-through; color: #777; }
+    .controls { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Q3 - Task Manager With Filters (jQuery AJAX + Query Params)</h1>
+  <p>JSON Server: <code>json-server --watch db.json --port 3003</code></p>
+
+  <div class="controls">
+    <label>Filter:
+      <select id="filterSelect">
+        <option value="all">All</option>
+        <option value="Low">Low Priority</option>
+        <option value="Medium">Medium Priority</option>
+        <option value="High">High Priority</option>
+        <option value="completed">Completed</option>
+      </select>
+    </label>
+  </div>
+
+  <ul id="taskList"></ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

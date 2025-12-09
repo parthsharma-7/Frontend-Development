@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 10 - Q1 Live Product Search</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .search-container { margin-bottom: 10px; }
+    .results { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-top: 10px; }
+    .product-card { border: 1px solid #ccc; padding: 8px; border-radius: 4px; text-align: center; }
+    .product-card img { max-width: 100%; height: 120px; object-fit: cover; }
+    #loading { display: none; font-size: 14px; color: #555; }
+    #message { margin-top: 8px; font-weight: bold; color: #c00; }
+  </style>
+</head>
+<body>
+  <h1>Q1 - Real-Time Live Product Search (jQuery AJAX)</h1>
+  <p>JSON Server: <code>json-server --watch db.json --port 3001</code></p>
+
+  <div class="search-container">
+    <input type="text" id="searchBox" placeholder="Search products..." />
+    <span id="loading">Loading...</span>
+  </div>
+
+  <div id="message"></div>
+  <div id="results" class="results"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

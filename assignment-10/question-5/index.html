@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Assignment 10 - Q5 College Timetable Viewer</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #classes { margin-top: 10px; }
+    .class-item { border-bottom: 1px solid #eee; padding: 6px 0; }
+    .no-classes { color: #c00; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Q5 - College Timetable Viewer (Fetch + Dynamic Rendering)</h1>
+  <p>JSON Server: <code>json-server --watch db.json --port 3005</code></p>
+
+  <label for="daySelect">Select Day: </label>
+  <select id="daySelect">
+    <option value="Monday">Monday</option>
+    <option value="Tuesday">Tuesday</option>
+    <option value="Wednesday">Wednesday</option>
+    <option value="Thursday">Thursday</option>
+    <option value="Friday">Friday</option>
+  </select>
+
+  <div id="classes"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
